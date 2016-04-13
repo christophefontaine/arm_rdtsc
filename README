@@ -1,0 +1,10 @@
+Very simple a without any real test to allow access to performance counters (specifically cycles counter) to userland.
+Meant for AArch32, tested on Raspberri Pi 3 running raspbian and kernel 4.4.6-v7+
+
+- in ./kmod
+make
+insmod rdtsc.ko
+
+- in ./test
+gcc rdtsc_test.c  -o rdtsc_test
+
