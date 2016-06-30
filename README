@@ -1,10 +1,8 @@
-Very simple a without any real test to allow access to performance counters (specifically cycles counter) to userland.
-Meant for AArch32, tested on Raspberri Pi 3 running raspbian and kernel 4.4.6-v7+
+Code provided AS-IS.
 
-- in ./kmod
-make
-insmod rdtsc.ko
+Kmod to mess with the kernel :-)
+Tested with raspberry pi 2, 3 and nvidia tegra Jetson TK1 platforms.
 
-- in ./test
-gcc rdtsc_test.c  -o rdtsc_test
-
+- enable userland access to cpu cycle counter
+- IOCTL to flush cache when a full memory barrier (dsb) instruction is not enough:
+when a device is not in the same coherency domain as the processors, this may be useful !
